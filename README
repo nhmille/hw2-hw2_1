@@ -1,16 +1,17 @@
 Run the shell script 
-python hw2_seq2seq.sh <Data_Folder> <output_filename.txt>
+python hw2_seq2seq.sh <Specified_Testing_Data> <output_filename.txt>
 
 This script will
-- Read in test data specified by Data_Folder
+- Read in test data in the folder specified by Specified_Testing_Data
 - Load "best_model.pth"
 - Evaluate the model over the data
 - Run bleu_eval to calculate and return the bleu score
 
-Data_Folder should be nested in a folder named "MLDS_hw2_1_data" and the corresponding .json file should also be located there
+Specified_Testing_Data should be a folder nested in "MLDS_hw2_1_data" (also a folder)
+All .json should be located in the "MLDS_hw2_1_data" folder
+
 
 In other words, the data structure should be
-
 /Working directory/
 bleu_eval
 HW2
@@ -18,15 +19,13 @@ HW2_supp
 hw2_seq2seq.sh
 
 
-*** This folder must exist to provide the vocabulary to the model
-/Working directory/training_data/
-feat
-video
-id
-
-
-/Working directory/testing_data/
-feat
-video
-id
+This .json folder must exist to provide the vocabulary to the model
+/Working directory/MLDS_hw2_1_data/
 training_label.json
+
+
+/Working directory/testing_data/Specified_Testing_Data/
+feat
+video
+id
+Specified_Testing_Data_label.json
