@@ -9,14 +9,14 @@ from HW2_Supp import Encoder, Decoder, S2S, train, plotTraining, createOutputFil
 
 start_time = time.time()
 
-test_1 = True
+# test_1 = True
 
-if test_1:
-# if len(sys.argv) > 1:
-    # data_directory = sys.argv[1]
-    # output_filename = sys.argv[2]
-    data_directory = 'test_testing_data'
-    output_filename = 'out.txt'
+# if test_1:
+if len(sys.argv) > 1:
+    data_directory = sys.argv[1]
+    output_filename = sys.argv[2]
+    # data_directory = 'test_testing_data'
+    # output_filename = 'out.txt'
     test_only = True
 else:
     data_directory = ''
