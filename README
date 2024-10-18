@@ -24,13 +24,23 @@ hw2_seq2seq.sh
           <Specified_Testing_Data>_label.json
 
 
-Additional Clarification
-The script will
+## Explanation of activity:
 - Read in test data in the folder specified by Specified_Testing_Data
 - Load "best_model.pth"
 - Evaluate the model over the data
 - Run bleu_eval to calculate and return the bleu score
 
+
+## Which shell file to run?
+Default is "hw2_seq2seq.sh" which calls using "python3"
+- My local machine only recognized "python"
+
+I have included a backup
+- hw2_seq2seq.sh -> Runs using python3
+- hw2_seq2seq_not3.sh -> Runs using python
+
+
+## Working directory clarification in words:
 training_label.json should be located in the nested folder, "MLDS_hw2_1_data"
 - Ensures the model can recreate correct vocabulary
 
