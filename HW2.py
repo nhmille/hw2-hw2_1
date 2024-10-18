@@ -9,16 +9,17 @@ from HW2_Supp import Encoder, Decoder, S2S, train, plotTraining, createOutputFil
 
 start_time = time.time()
 
-# data_directory = 'testing_data'
-# output_filename = 'out.txt'
-# test_only = True
+test_1 = True
 
-if len(sys.argv) > 1:
-    data_directory = sys.argv[1]
-    output_filename = sys.argv[2]
+if test_1:
+# if len(sys.argv) > 1:
+    # data_directory = sys.argv[1]
+    # output_filename = sys.argv[2]
+    data_directory = 'test_testing_data'
+    output_filename = 'out.txt'
     test_only = True
 else:
-    data_directory = None
+    data_directory = ''
     output_filename = None
     test_only = False
 
@@ -28,9 +29,9 @@ hyperparameters ={  "batch_sz": 16,
                     "hidden_dim": 128,
                     "vocab_count": 3,
                     "layers": 1,
-                    "lr": 0.00025,
-                    "tf_ratio": 0.5,
-                    "decay": 1e-5,
+                    "lr": 0.00005,
+                    "tf_ratio": 0.3,
+                    "decay": 1e-4,
                     "drop": 0.5}
     
 # @@@@ Change vocab to be defined from the data directory?
@@ -55,8 +56,8 @@ if test_only:
 
 
 else:
-    training_data = createData(directory=data_directory)
-    testing_data = createData(directory=data_directory, test=True)
+    training_data = createData(data_directory=data_directory)
+    testing_data = createData(data_directory=data_directory, test=True)
 
     path_list, caption_list = createDataLists(training_data)
     path_list_t, caption_list_t = createDataLists(testing_data)

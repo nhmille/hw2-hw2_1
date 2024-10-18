@@ -18,8 +18,8 @@ import matplotlib.pyplot as plt
 
 
 def createVocab(hyperparameters, data_directory):
-    # Assuming vocab can be found from "data_directory/training_labels"
-    training_label_path = os.path.join(os.getcwd(), 'MLDS_hw2_1_data', data_directory, 'training_label.json')
+    # Assuming vocab can be found from "MLDS_hw2_1_data/training_labels"
+    training_label_path = os.path.join(os.getcwd(), 'MLDS_hw2_1_data', 'training_label.json')
     with open(training_label_path, 'r') as f:
         data = json.load(f)
     
@@ -55,7 +55,7 @@ def createData(data_directory, test=False):
     paths = []
     
     # Testing mode
-    if data_directory != None:
+    if data_directory != "":
         directory = os.path.join(os.getcwd(), "MLDS_hw2_1_data", data_directory, "feat")       
         
     # Training mode
@@ -72,7 +72,7 @@ def createData(data_directory, test=False):
             paths.append((vid_id, path))
 
     # Testing mode
-    if data_directory != None:
+    if data_directory != "":
         json_filename = data_directory[:-4]
         json_filename = json_filename + "label.json"
         directory = os.path.join(os.getcwd(), "MLDS_hw2_1_data", json_filename)
