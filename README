@@ -1,31 +1,41 @@
-Run the shell script 
+# CPSC 8430
+# Homework 2: Sequence-to-Sequence Model
+
+## How to run
+Run the shell script with the following command usage:
+'''bash
 python hw2_seq2seq.sh <Specified_Testing_Data> <output_filename.txt>
 
-This script will
+## How to setup working directory
+/Working directory/
+bleu_eval.py
+HW2.py
+HW2_supp.py
+hw2_seq2seq.sh
+
+/Working directory/
+    MLDS_hw2_1_data/
+      training_label.json
+
+      <Specified_Testing_Data>/
+          feat
+          video
+          id
+          <Specified_Testing_Data>_label.json
+
+
+Additional Clarification
+The script will
 - Read in test data in the folder specified by Specified_Testing_Data
 - Load "best_model.pth"
 - Evaluate the model over the data
 - Run bleu_eval to calculate and return the bleu score
 
-Specified_Testing_Data should be a folder nested in "MLDS_hw2_1_data" (also a folder)
+training_label.json should be located in the nested folder, "MLDS_hw2_1_data"
+- Ensures the model can recreate correct vocabulary
+
+Specified_Testing_Data should be a folder nested in "MLDS_hw2_1_data"
+- Contains actual feature, video, and id data
+
 All .json should be located in the "MLDS_hw2_1_data" folder
-
-
-In other words, the data structure should be
-/Working directory/
-bleu_eval
-HW2
-HW2_supp
-hw2_seq2seq.sh
-
-
-This .json folder must exist to provide the vocabulary to the model
-/Working directory/MLDS_hw2_1_data/
-training_label.json
-
-
-/Working directory/testing_data/Specified_Testing_Data/
-feat
-video
-id
-Specified_Testing_Data_label.json
+- To ensure creation of correct labels
